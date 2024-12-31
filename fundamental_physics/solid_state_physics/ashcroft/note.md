@@ -2,6 +2,7 @@
  * 이 문서는 내가 2024년 겨울에 이 책(교재) 공부하면서 노트필기 식으로 정리하는 것이다.
  * 이 책은 gaussian systems of units를 쓰고 있다. 이에 대해 다음 자료를 참고하자. [Robert G. LittleJohn, Physics 221A Appendix A, Fall 2020](https://bohr.physics.berkeley.edu/classes/221/1112/notes/emunits.pdf)  
  * 이 문서에서 Figure나 식의 번호는 모두 ashcroft & mermin, Solid State Physics (1978)의 것을 따른다.
+ * Solutions of problems; let's see [www.physicsisbeautiful.com](https://www.physicsisbeautiful.com/)
 
 ## Chapter 1. Drude Model
 챕터1은 drude model은 금속의 내부를 free electron의 ideal gas로 본 classical한 모델이다. Free electron들은 이온(원자핵 + core electron)과 충돌하는 상호작용만 한다고 가정된다. Drude모델 자체와 더불어 1챕터에서는 다양한 물리량이 처음으로 등장한다. Relaxation time $\tau$는 메탈 내의 전자가 이온에 충돌하는 평균적인 시간이다. 
