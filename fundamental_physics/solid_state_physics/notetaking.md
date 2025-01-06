@@ -106,13 +106,37 @@ imply more sound wave modes than there are atoms in the entire system."*
         * positive Hall coefficient implies that charge of the carrier is positive.
         
 ### Thermal Conductivity
-* #fund) thermal conductivity of monatomic gas: $K=\frac{1}{3}nc_v\langle v \rangle\lambda$, where $c_v = C_v/N$, $\langle v \rangle = \sqrt{\frac{8k_B T}{\pi m}}$.
+* #fund)  thermal conductivity $\kappa$(kappa) satisfies $\vec{j}^q = - \kappa\nabla{T}$ where $\vec{j}^q$ is heat flux
+* #fund)From Boltzmann's kinetic theory of gases 
+    * thermal conductivity of monatomic gas: $\kappa=\frac{1}{3}nc_v\langle v \rangle\lambda$, 
+        * where $c_v = C_v/N$, 
+        * $\langle v \rangle = \sqrt{\frac{8k_B T}{\pi m}}$.
     * scattering length $\lambda = \langle v \rangle \tau$
     * $c_v = \frac{3}{2} k_B$
-* Then $K = \frac{4}{\pi} \frac{n\tau k_B^2 T}{m}$.
+* Then $\kappa = \frac{4}{\pi} \frac{n\tau k_B^2 T}{m}$.
 
-#### Lorentz number and Seebeck coefficient
-* Lorentz number $L = \frac{K}{T\sigma}$ same for all materials and all T
-    * Known as Wiedermann - Franz law, 
+#### Thermal conductivity and Lorentz number 
+* It gives that Lorentz number $L = \frac{\kappa}{T\sigma}$ is same for all materials and all T
+    * Known as Wiedermann - Franz law (experimentally, for metal).
+    * two mistakes; specific heat capacity overestimated, $\langle v \rangle$ underestimated
+        * However, the two errors canceled each other out, resulting in a fairly accurate outcome. (about 2 times smaller than actual value)
 
-## Lecture 4. Sommerfeld theory
+#### Seebeck coefficient
+* ***Peltier effect*** 
+    * Peltier coefficient $\Pi$ satisfies: $\vec{j}^q = \Pi \vec{j}$
+* #fund) from kinetic theory of gases, $\vec{j}^q = \frac{1}{3}(c_v T)n\vec{v}$
+    * #Q)why? *$c_v T$ is heat carried by one particle*
+    * $\vec{j} = -en\vec{v}$
+    * Thus $\Pi = - \frac{c_v T}{3e} = -\frac{k_B T}{2e}$
+* ***Seebeck coefficient*** $S = \Pi/T = -k_B/2e$
+* this results is about 100 times larger than actual value, because of overestimated $c_v$
+* #Q) why it is far from actual value?
+    * A) It does not use $v$ from drude model, compensated by current.
+
+
+
+
+## Lecture 4. Sommerfeld (free electron) theory
+* #Exercise of 4.2.) 
+    * Why $g(\epsilon) = \frac{3n}{2E_F}(\frac{\epsilon}{E_F})^{1/2}$ (eq 4.11)?
+    * why does the drude theory provide quiet precise heat capacity?
