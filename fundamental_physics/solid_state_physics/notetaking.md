@@ -19,42 +19,42 @@ There will be 3 types of items.
         * where $\omega$ is 'Einstein frequency'.
     * (standard notation) $\beta = 1/(k_B T)$
     * Partition function $Z_n = \sum_{n\geq 0}e^{-\beta E_n}$
-    * expectations of energy from partition function : $<E> = -\frac{1}{Z}\frac{\partial{Z}}{\partial{\beta}}$  
+    * expectations of energy from partition function : $\langle E \rangle = -\frac{1}{Z}\frac{\partial{Z}}{\partial{\beta}}$  
 * Then, Expectation of energy is $\hbar \omega [1/2 + 1/(e^{\beta \hbar \omega}-1)]$ or   
     $\langle{E} \rangle_{osc} = \hbar \omega[1/2 + n_B(\beta \hbar \omega)]$, where $n_B(x) = 1/(e^{x}-1)$ (eq 2.1)
     * $n_B$ is Bose occupation factor
-    * #Q) interpretation : "the mode $\omega$ is an excitation that is excited on average $n_B$ times or equivalently, there is a corresponding boson orbital which is occupied by n bosons"
+    * #Q) interpretation : "the mode $\omega$ is an excitation that is excited on average $n_B$ times or equivalently, there is a boson orbital which is occupied by $n_B$ bosons"
 * Then, Heat Capacity is $C = \partial{\langle E \rangle }/\partial T = \frac{\hbar^2 \omega^2}{k_B T^2}(e^{\beta \hbar \omega })/(e^{\beta \hbar \omega}-1)^2$
     * High temperature limit ($k_B T \gg \hbar \omega$), Heat capacity $C/N = k_B$ (cuz expansion of $e^x$ around $x=0$ is $e^x = 1 + x + \frac{x^2}{2!}\dots$)
     * Low temperature limit ($k_B T \ll \hbar \omega$), Heat capacity $C\rightarrow +0$. 
 * But low temperature limit is different from the experimental results. 
 
 ### Example: Diamond
-$w = \sqrt{k/m}$ is extremely large, room temperature is not the high temperature limit.
+$w = \sqrt{k/m}$ is extremely large, room temperature is far below the high-temperature limit.
 
 ## Lecture 2. Debye Model
 
 ### Periodic(Born-Von-Karmen) Boundary Condition 
 * Instead of 'Box' boundary condition, cuz mathmatically it is simple.
 * Let general solution $e^{ikr}$(plane wave), BC gives $e^{ikr} = e^{ik(r+L)}$. Then $k=2\pi n/L $
-* In this case, $\sum_k \rightarrow \frac{L}{2\pi}\int_{-\infin}^{\infin}{dk}$. 
-* in 3-D, $\sum_{k_x}\sum_{k_y}\sum_{k_z} = (\frac{L}{2\pi})^3 \int dk_x \int dk_y \int dk_z = (\frac{L}{2\pi})^3\int_0^{\infin}4\pi k^2 dk$ 
+* In this case, $\sum_k \rightarrow \frac{L}{2\pi}\int_{-\infty}^{\infty}{dk}$. 
+* in 3-D, $\sum_{k_x}\sum_{k_y}\sum_{k_z} = (\frac{L}{2\pi})^3 \int dk_x \int dk_y \int dk_z = (\frac{L}{2\pi})^3\int_0^{\infty}4\pi k^2 dk$ 
 
 ### Debye's calc. following Planck
 * Planck calculated light as quantized wave. Debye did it for soundwave in solid. 
 * As an analogy to Einstein's calculation, Debye derived the 'energy of the system' instead of an oscillator (Eventually about soundwave), $\langle{E}\rangle_{tot} = 3\sum_{modes}\hbar \omega_{mode}(1/2 + n_B[\beta\hbar\omega_{mode})]$ 
     * 3 came from the polarization of the soundwave (one longitudinal, two transverse)
 * It is assumed that velocity is independent to the polarization. So $\omega = vk$
-    * Then $\langle{E}\rangle_{tot} = 3\int_{0}^\infin 4\pi k^2 (\frac{L}{2\pi})^3 \hbar \omega [n_B(\beta \hbar \omega)+1/2] dk = 12\pi (\frac{L}{2\pi})^3\int_0^\infin \frac{\omega^2}{v^3} \hbar \omega [n_B(\beta \hbar \omega)+1/2]d\omega$
-    * If 'density of state' is $g(\omega)$, $\langle{E}\rangle_{tot} = \int_0^\infin g(w) \langle{E}\rangle{} (\omega)d\omega$  
+    * Then $\langle{E}\rangle_{tot} = 3\int_{0}^\infty 4\pi k^2 (\frac{L}{2\pi})^3 \hbar \omega [n_B(\beta \hbar \omega)+1/2] dk = 12\pi (\frac{L}{2\pi})^3\int_0^\infty \frac{\omega^2}{v^3} \hbar \omega [n_B(\beta \hbar \omega)+1/2]d\omega$
+    * If 'density of state' is $g(\omega)$, $\langle{E}\rangle_{tot} = \int_0^\infty g(w) \langle{E}\rangle{} (\omega)d\omega$  
         where $g(\omega) =  \frac{12\pi L^3 \omega^2}{8\pi^3 v^3}$  
     * Let $nL^3 = N$, then $g(\omega) = N\frac{9\omega^2}{\omega_d^3}$ where debye frequency $\omega_d$ is $\omega_d^3 = 6\pi^2 n v^3$
 * Difference from the Planck's result for quantum energy of light waves,
     * replaced $2/c^3$ by $3/v^3$
     * zero point energy of each oscillator, $\hbar\omega/2$
     * This integration diverges. but, If we ignore zero point energy cuz its integration will be independent to temperature T, then  
-        $\langle E \rangle = \int_0^\infin N\frac{9\omega^2}{\omega_d^3}\hbar\omega[1/(e^{\beta \hbar \omega}-1)]d\omega + T \text{ independent const.} =\frac{9N\hbar}{\omega_d^3} \int_0^\infin \frac{\omega^3}{(e^{\beta \hbar \omega}-1)}d\omega + T \text{ independent const.} $
-        * utilizes $\int_0^\infin \frac{x^3}{e^x-1}dx = 3!\sum_{n=1}^\infin \frac{1}{n^4}$  
+        $\langle E \rangle = \int_0^\infty N\frac{9\omega^2}{\omega_d^3}\hbar\omega[1/(e^{\beta \hbar \omega}-1)]d\omega + T \text{ independent const.} =\frac{9N\hbar}{\omega_d^3} \int_0^\infty \frac{\omega^3}{(e^{\beta \hbar \omega}-1)}d\omega + T \text{ independent const.} $
+        * utilizes $\int_0^\infty \frac{x^3}{e^x-1}dx = 3!\sum_{n=1}^\infty \frac{1}{n^4}$  
     * Then $\langle E \rangle = 9N \frac{(k_B T)^4 \pi^4}{(\hbar \omega_d)^3 15} + T \text{ independent const.}$  
         So heat capacity is $C = \partial{\langle E \rangle}/\partial{T} \sim T^3$
 
@@ -62,7 +62,7 @@ $w = \sqrt{k/m}$ is extremely large, room temperature is not the high temperatur
 * #Q)Why? *"Debye understood that the problem with his approximation
 is that it allows an infinite number of sound wave modes — up to arbitrarily large k. This would
 imply more sound wave modes than there are atoms in the entire system."*
-* As $\int_0^\infin d\omega$ yield infinite number of modes, Debye introduced cutoff frequency which satisfies $3N = \int_0^{\omega_{cutoff}} g(\omega)d\omega$
+* As $\int_0^\infty d\omega$ yield infinite number of modes, Debye introduced cutoff frequency which satisfies $3N = \int_0^{\omega_{cutoff}} g(\omega)d\omega$
     * with $g(\omega) = N\frac{9\omega^2}{\omega_d^3}$, it becomes $3N = N\frac{3\omega_{cutoff}^3}{\omega_d^3}$, so $\omega_{cutoff}=\omega_d$
 * With cutoff frequency,  $\langle E \rangle_{tot} = \int_0^{\omega_D}g(\omega)\hbar \omega [n_B(\beta\hbar\omega)+1/2]d\omega$
     * Low temperature limit : No difference, $k_B T\ll \hbar \omega \rightarrow \beta \hbar \omega \gg 1$. so, $e^{\beta\hbar\omega}$ converges to 0 before it reaches the debye frequency. #Q) really?
@@ -132,9 +132,6 @@ imply more sound wave modes than there are atoms in the entire system."*
 * this results is about 100 times larger than actual value, because of overestimated $c_v$
 * #Q) why it is far from actual value?
     * A) It does not use $v$ from drude model, compensated by current.
-
-
-
 
 ## Lecture 4. Sommerfeld (free electron) theory
 * #Exercise of 4.2.) 
