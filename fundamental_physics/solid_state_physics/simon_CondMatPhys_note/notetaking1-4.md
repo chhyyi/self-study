@@ -7,7 +7,7 @@ There will be 3 types of items.
 2. fundamental : Something assumed to be familiar, more fundamental things but I am not sure (So I want to check again), starts with #F: or #Fund:
 3. Questions : may have answers as a subitem. starts with #Q:
 
-## Lecture 1.
+## Chap 1.
 ### Heat Capacity
 * #Fund: heat capacity $C$, ideal gas $C_v = 3k_B/2$ per atom, Avogadro's number $R$
 * Law of Dulong-Petit $C = 3k_B$ per atom or $C = 3R$ : knwon heat capacity for many solids in room temperature in early 19C.
@@ -32,7 +32,7 @@ There will be 3 types of items.
 ### Example: Diamond
 $w = \sqrt{k/m}$ is extremely large, room temperature is far below the high-temperature limit.
 
-## Lecture 2. Debye Model
+## Chap 2. Debye Model
 
 ### Periodic(Born-Von-Karmen) Boundary Condition 
 * Instead of 'Box' boundary condition, cuz mathmatically it is simple.
@@ -44,6 +44,8 @@ $w = \sqrt{k/m}$ is extremely large, room temperature is far below the high-temp
 * Planck calculated light as quantized wave. Debye did it for soundwave in solid. 
 * As an analogy to Einstein's calculation, Debye derived the 'energy of the system' instead of an oscillator (Eventually about soundwave), $\langle{E}\rangle_{tot} = 3\sum_{modes}\hbar \omega_{mode}(1/2 + n_B[\beta\hbar\omega_{mode})]$ 
     * 3 came from the polarization of the soundwave (one longitudinal, two transverse)
+    * #Q) Einstein's model에서도 heat capacity를 구하기 위해 결과적으로 불연속적인 $\omega$에 대해 summation을 하지 않았나? ($-\frac{1}{Z}\frac{\partial{Z}}{\partial \beta}$) 여기서 전체 에너지를 구하기 위한 summation의 $\omega_{modes}$랑 그것은 어떤 관계인가? Relation of Einstein frequency and $\omega_{modes}$ here?
+        * A) see the interpretation after two equation. Einstein assumed single oscillators so $\omega$ was just an open parameter. Debye introduced 'soundwave' and 'PBC' so $\omega_{modes}$ becomes a group of discrete numbers. (So Simon says ***each excitation mode is a boson of freqeuncy $\omega(\vec{k})$ and it is occupied on average $n_B{\beta \hbar \omega(\vec{k})}$*** )
 * It is assumed that velocity is independent to the polarization. So $\omega = vk$
     * Then $\langle{E}\rangle_{tot} = 3\int_{0}^\infty 4\pi k^2 (\frac{L}{2\pi})^3 \hbar \omega [n_B(\beta \hbar \omega)+1/2] dk = 12\pi (\frac{L}{2\pi})^3\int_0^\infty \frac{\omega^2}{v^3} \hbar \omega [n_B(\beta \hbar \omega)+1/2]d\omega$
     * If 'density of state' is $g(\omega)$, $\langle{E}\rangle_{tot} = \int_0^\infty g(w) \langle{E}\rangle{} (\omega)d\omega$  
@@ -76,7 +78,7 @@ imply more sound wave modes than there are atoms in the entire system."*
         * #Q) wavelength become comparable to... what?? core?
     * In the case of Metals, $C = \alpha T^3 + \gamma T$ at low frequency
 
-## Lecture 3. Drude Theory
+## Chap 3. Drude Theory
 * Kinetic theory of gases on electron within metal.
 * Assumptions of Drude theory:
     1. Scattering time $\tau$, probability of collision during $dt$ is $dt/\tau$.
@@ -133,7 +135,36 @@ imply more sound wave modes than there are atoms in the entire system."*
 * #Q) why it is far from actual value?
     * A) It does not use $v$ from drude model, compensated by current.
 
-## Lecture 4. Sommerfeld (free electron) theory
-* #Exercise of 4.2.) 
-    * Why $g(\epsilon) = \frac{3n}{2E_F}(\frac{\epsilon}{E_F})^{1/2}$ (eq 4.11)?
+## Chap 4. Sommerfeld (free electron) theory
+### 4.1. basic Fermi-Dirac statistics
+* Fermi factor: $n_F(\beta(E-\mu)) = \frac{1}{e^{\beta (E - \mu)}+1}$. Given a system of free electrons with chemical potential $\mu$ the probability of eigenstate $E$ is occupied.
+    * why 'fermi factor' given as this form, function of $\beta(E - \mu)$?
+* in the box $V = L^3$, $k = (\frac{2\pi}{L})^3 (n_x, n_y, n_z)$, $\epsilon(\vec{k}) = \frac{\hbar^2 |k|^2}{2m}$
+* total electrons in the system $N = 2\sum_{\vec{k}}n_F(\beta(\epsilon(\vec{k})-\mu))N= 2\frac{L^3}{(2\pi)^3}\int_{\vec{k}} n_F(\beta(\epsilon(\vec{k})-\mu))d\vec{k}$ (eq 4.3)
+    * '2' from the two possible spin states
+* Definition 4.1.1. The Fermi Energy $E_F$ is chemical potential at $T=0$
+    * Fermi Wavevector $k_F$ satisfies $E_F = \frac{\hbar^2 k_F^2}{2m}$
+    * Fermi velocity $v_F = \frac{\hbar k_F}{m}$
+* Fermi energy of metal with $N$ electrons in $V$
+    * In this case, $n_F(\beta(\epsilon(\vec{k})-\mu))$ becomes a step function, so $N = 2\frac{V}{(2\pi)^3}\int_0^{k_F}4\pi k^2 dk= 2\frac{V}{(2\pi)^3}\frac{4\pi k_F^3}{3}$ (eq 4.6)
+    * Thus $k_F = (3\pi^2 n)^{1/3}$ and $E_F = \frac{\hbar^2 (3\pi^2 n)^{2/3}}{2m}$ (eq 4.7)
+
+### 4.2. Electric Heat Capacity
+* Total energy of metal $E_{total} = 2\frac{V}{(2\pi)^3}\int_{\vec{k}}\epsilon(\vec{k})n_F(\beta(\epsilon(\vec{k})-\mu))d\vec{k}$ and Total 
+* Let $N = V\int_{\epsilon}g(\epsilon)n_F(\beta(\epsilon-\mu))d\epsilon$ where $g(\omega)$ is density of state per unit volume.
+    * from eq 4.3, $N = \int_k \frac{L}{2\pi}^3 4\pi k^2 n_F(\beta(\epsilon(k)-\mu))dk$
+    * from $\epsilon(k) = \frac{\hbar^2 k^2}{2m}$, $k = (\frac{2m\epsilon}{\hbar^2})^{1/2} $ and $\frac{dk}{d\epsilon}d\epsilon = (\frac{m}{2\epsilon \hbar^2})^{1/2}d\epsilon$
+    * Thus $g(\epsilon) = \frac{(2m)^{3/2}}{2\pi^2 \hbar^3}\epsilon^{1/2}$
+        * $g(\epsilon)d\epsilon$ is total number of eigenstate (includes both spin states) with energies between $\epsilon$ and $\epsilon + d\epsilon$
+        * with $E_F$ from eq4.7, $g(\epsilon) = \frac{3n}{2E_F}(\frac{\epsilon}{E_F})^{1/2}$ (eq 4.11)
+* While $k_B T \ll E_F$ in room temperature, let $\mu = E_F$ (see 31p, footnote 9 and the sentence it is attached to)
+    * Then (See Figure 4.1) we can approximate $E(T)$ as $E(T) = E(0) + (\frac{\gamma}{2})[Vg(E_F)(k_B T)](k_B T)$
+    * As $g(E_F)(k_B T) \sim \text{number of particles that can be excited per volume}$
+    * and Last $k_B T \sim \Delta{E}\text{ of an excited particle}$ 
+* Then $C = \partial E/\partial T = \gamma g(E_F)k_B^2 T V$
+    * with eq 4.11 and $k_B T_F = E_F$, 
+    * $C = \gamma (\frac{3k_B N}{2}) (\frac{T}{T_F})$
+    
+
+* #Exercise of chapter 4) 
     * why does the drude theory provide quiet precise heat capacity?
