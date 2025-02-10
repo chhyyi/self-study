@@ -153,7 +153,7 @@ imply more sound wave modes than there are atoms in the entire system."*
 * Total energy of metal $E_{total} = 2\frac{V}{(2\pi)^3}\int_{\vec{k}}\epsilon(\vec{k})n_F(\beta(\epsilon(\vec{k})-\mu))d\vec{k}$ and Total 
 * Let $N = V\int_{\epsilon}g(\epsilon)n_F(\beta(\epsilon-\mu))d\epsilon$ where $g(\omega)$ is density of state per unit volume.
     * from eq 4.3, $N = \int_k \frac{L}{2\pi}^3 4\pi k^2 n_F(\beta(\epsilon(k)-\mu))dk$
-    * from $\epsilon(k) = \frac{\hbar^2 k^2}{2m}$, $k = (\frac{2m\epsilon}{\hbar^2})^{1/2} $ and $\frac{dk}{d\epsilon}d\epsilon = (\frac{m}{2\epsilon \hbar^2})^{1/2}d\epsilon$
+    * from $\epsilon(k) = \frac{\hbar^2 k^2}{2m}$ , $k = (\frac{2m\epsilon}{\hbar^2})^{1/2}$ and $\frac{dk}{d\epsilon}d\epsilon = (\frac{m}{2\epsilon \hbar^2})^{1/2}d\epsilon$
     * Thus $g(\epsilon) = \frac{(2m)^{3/2}}{2\pi^2 \hbar^3}\epsilon^{1/2}$
         * $g(\epsilon)d\epsilon$ is total number of eigenstate (includes both spin states) with energies between $\epsilon$ and $\epsilon + d\epsilon$
         * with $E_F$ from eq4.7, $g(\epsilon) = \frac{3n}{2E_F}(\frac{\epsilon}{E_F})^{1/2}$ (eq 4.11)
@@ -164,7 +164,40 @@ imply more sound wave modes than there are atoms in the entire system."*
 * Then $C = \partial E/\partial T = \gamma g(E_F)k_B^2 T V$
     * with eq 4.11 and $k_B T_F = E_F$, 
     * $C = \gamma (\frac{3k_B N}{2}) (\frac{T}{T_F})$
-    
+* Correction of calculations of chapter 3, thermal conductivity and Peltier Coefficient
+    * Thermal conductivity $\kappa = \frac{1}{3}nc_v \langle v \rangle \tau$
+        * use $\langle v \rangle^2 = v_F^2$, instead of $\langle v \rangle^2 = \frac{8k_B T}{\pi m}$
+    * Peltier Coefficient : $\Pi = - \frac{c_v T}{3e}$. use new $c_v$
+
 
 * #Exercise of chapter 4) 
     * why does the drude theory provide quiet precise heat capacity?
+
+### 4.3. Magnetic Spin Susceptibility (Pauli Paramagnetism)
+* #Fund: if paramagnetism, $\vec{M} = \frac{\chi}{\mu_0}\vec{B}$ (see [wikipedia](https://en.wikipedia.org/wiki/Magnetization#Relations_between_B,_H,_and_M)) 
+* $\mathcal{H} = \frac{\vec{p}^2}{2m} + g\mu_B\vec{B}\cdot\vec{\sigma}$
+    * (neglecting lorentz force of the magnetic field)
+    * let Bohr magneton $\mu_B = \frac{e\hbar}{2m_e}$
+    * $\bf{\sigma}$ is pauli spin operator of which eigenvalue $\pm 1/2$
+    * g factor is 2 in this case
+
+* $\epsilon(\vec{k}, \uparrow) = \epsilon_{\vec{k}}^0 + \mu_B B$   
+and $\epsilon(\vec{k}, \downarrow) = \epsilon_{\vec{k}}^0 - \mu_B B$
+    * 'upspin' become expensive
+    * $\epsilon_{\vec{k}}^0 = \frac{\hbar^2 |\vec{k}|^2}{2m_e}$
+* Assume $B=0, T=0$ (while $T\ll T_F$), Then
+    * $n_\uparrow = \frac{N_\uparrow}{V}= n_\downarrow = \frac{n_\downarrow}{V} = \int_0^{\epsilon_F}d\epsilon \frac{g(\epsilon)}{2}$
+* If $B\neq 0$ and $\mu_B B\ll 1$, 
+    * $n_\downarrow - n_\uparrow = \int_{\epsilon_F-\mu_B B}^{\epsilon_F+\mu_B B} \frac{g(\epsilon)}{2}d\epsilon = g(\epsilon_F)\mu_B B$
+* $M = -\frac{1}{V}\frac{dE}{dB} = -(n_\uparrow - n_\downarrow) \mu_B$ (eq 4.12) 
+    * magnetization of an electron is $\mu_B$ 
+    * $M= g(\epsilon_F)\mu_B^2 B$
+    * $\chi = \mu_0 \mu_B^2 g(\epsilon_F)$
+### 4.4. Summary of Free Electron Model(Drude + Sommerfeld)
+* Well predicted $c, \sigma, \kappa, \Pi, \chi$ but....
+* scattering length $\lambda$ too big
+* Density of electron $\sim 1e/atom$
+* sign of $R_{Hall}$
+* Optical properties. why differs?
+* Magnetism $M\neq 0 $ when $B = 0$
+* coulomb interaction
