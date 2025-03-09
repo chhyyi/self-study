@@ -9,8 +9,8 @@ There will be 3 types of items.
 
 ## Chap 1.
 ### Heat Capacity
-* #Fund: heat capacity $C$, ideal gas $C_v = 3k_B/2$ per atom, Avogadro's number $R$
-* Law of Dulong-Petit $C = 3k_B$ per atom or $C = 3R$ : knwon heat capacity for many solids in room temperature in early 19C.
+* #Fund: heat capacity $C$, ideal gas $C_v = 3k_B/2$ per atom, ideal gas constant $R = N_Ak_B$ (Where $N_A$ is Avogadro constant)
+* Law of Dulong-Petit $C = 3k_B$ per atom or $C = 3R$ per mol : knwon heat capacity for many solids in room temperature in early 19C.
 * #Fund: Boltzman model (1896) classical stat. mech. model, agree with $C = 3k_B$
 
 ### Einstein's calc.

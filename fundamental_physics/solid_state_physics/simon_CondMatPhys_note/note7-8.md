@@ -1,29 +1,3 @@
-# Chapter 7, 8
-Lecture 6. Monatomic Harmonic Chain
-## One-Dimensional Monatomic Chain
-* Taylor Expansion of Potential of One-Dimensional Model: $V(x) = V_{eq}+\frac{\kappa}{2}(x-x_{eq})^2+\frac{\kappa_3}{6}(x-x_{eq})^3+...$
-* Near equililibrium, potential of chain $V_{tot} = \sum_i V(x_i - x_{i+1}) = V_{eq} + \sum_i \frac{\kappa}{2}(\delta x_i-\delta x_{i+1})^2$ where $\delta x_n = x_n - x_n^{eq}$
-* force on atom $n$ is $F_n = \kappa(\delta x_{n+1} - \delta x_n) + \kappa(\delta x_{n-1} - \delta x_n)$
-* $m(\delta \ddot{x}_n) = \kappa(\delta x_{n+1} + \delta x_{n-1} - 2\delta x_n)$ where m is the mass of an atom.
-* Let $\delta x_n = Ae^{i\omega t - ikx_n^{eq}} = Ae^{i\omega t - ikna}$ where $a$ is lattice constant, 
-    * only consider $\omega\geq0$, because we will take only real parts.
-* Then $-\omega^2 m = \kappa(e^{-ika} + e^{ika}-2)=2\kappa(\cos{ka}-1) = -4\kappa \sin^2{\frac{ka}{2}}$
-* So $\omega = 2\sqrt{\frac{\kappa}{m}}|\sin\frac{ka}{2}|$ (eq 8.3)
-
-### Dispersion Relation and Periodicity
-* Dispersion relation $\omega(k)$ is shown in Figure 8.1.
-* Brilluin Zone
-* Reciprocal Space : periodic in $k\rightarrow k + 2\pi/a$
-* Reciprocal Lattice $k_p = 2\pi p/a$ with $p$ an integer
-    * direct lattice (real-space lattice) $x_n = na$
-    * $e^{iG_mx_n}=1$ where $G_m$ is a member of reciprocal lattice
-
-## Sound Waves
-* In the low-$k$ limit, from eq 8.3, $v_{sound} = \omega/k = a\sqrt{\frac{\kappa}{m}}$
-* This is same with eq7.3. In Chapter 7, it is predicted from compressibility and speed of soundwave of isotropic compressible fluid.
-    * compressibility $\beta$ is $\beta = -\frac{1}{V}\frac{\partial{V}}{\partial{P}}$. In 1-dim,
-    * In one dimensional case, $\beta = -\frac{1}{L}\frac{\partial{L}}{\partial{F}} = \frac{1}{\kappa x_{eq}} = \frac{1}{\kappa a}$ 
-    * #Fund) from fluid course, $v_{soundwave} = \sqrt{\frac{B}{\rho}} = \sqrt{\frac{1}{\beta \rho}}$, where $$
 
 # Chapter 7, 8  
 **Lecture 6: Monatomic Harmonic Chain**
@@ -72,6 +46,9 @@ Lecture 6. Monatomic Harmonic Chain
   \omega = 2\sqrt{\frac{\kappa}{m}} \left|\sin\left(\frac{ka}{2}\right)\right| \quad \text{(eq. 8.3)}.
   $
 
+- **aliasing:**
+  $e^{ikna} = e^{ik(n+N)a}$
+  
 ---
 
 ### Dispersion Relation and Periodicity
@@ -123,4 +100,30 @@ Lecture 6. Monatomic Harmonic Chain
     $
     v_{\text{sound}} = \sqrt{\frac{B}{\rho}} = \sqrt{\frac{1}{\beta \rho}},
     $
-    where $B$ is the bulk modulus and $\beta$ is the (adiabatic) compressibility.
+    where $B$ is the bulk modulus and $\beta$ is the (adiabatic) compressibility.  
+    From $\beta = 1/\kappa a$ and $\rho = \frac{m}{a}$ (1D), $v_{sound} = \sqrt{\frac{\kappa a^2}{m}}$
+
+- **Group velocity and phase velocity**
+  - #Q) I don't know why it is mentioned here.
+  - **Group velocity** $\frac{d\omega}{dk}$  
+    Group velocity is 0 where $k = \pm \frac{\pi}{a}$ (dispersion is flat)  
+  - **Phase Velocity** $\frac{\omega}{k}$  
+    #Q) *These two match in the case of a linear dispersion*
+
+## Counting Normal Modes
+- **Normal Modes:**  
+  Every atom osciallate with same frequency
+- **Assumption:**  
+if there is N atom forming a big circle
+- **Counting Normal Modes**  
+  $e^{i\omega t - ikna} = e^{i\omega t - ikna - ikNa}$  
+  $1 = e^{-ikNa}$  
+  $k = \frac{2\pi p}{Na}$, where p is integer satisfies $-\pi/a \leq k \leq \pi/a$. In other words, spacing between neighboring k in k-space is $\frac{2\pi}{Na}$  
+- **number of normal modes**  
+  $(\frac{2\pi}{a})/(\frac{2\pi}{Na}) = N$ , **This is what Debye predicted**  
+### Quantum Modes: Phonon
+- **energy states of the model**  
+  $E_n = \hbar\omega(n+1/2)$ 
+### Crystal Momentum 
+
+- **Modulo**
